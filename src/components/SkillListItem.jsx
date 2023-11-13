@@ -1,6 +1,6 @@
-function SkillListItem() {
+function SkillListItem(props) {
     return (
-        <li>SkillListItem</li>
+        <li className="SkillListItem">{props.skill} LEVEL {props.level}</li>
     )
 }
 

@@ -1,11 +1,11 @@
 import SkillListItem from "./SkillListItem"
 
-function SkillList() {
+function SkillList(props) {
     return (
         <ul>
-        <SkillListItem />
-        <SkillListItem />
-        <SkillListItem />
+            {props.skills.map(skill => (
+                <SkillListItem skill={skill.name} level={skill.level}/>
+            ))}
         </ul>
     )
 }
