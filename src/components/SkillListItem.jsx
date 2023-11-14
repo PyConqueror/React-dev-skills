@@ -1,7 +1,10 @@
 function SkillListItem(props) {
     return (
-        <li className="SkillListItem">{props.skill} LEVEL {props.level}</li>
-    )
+        <li className="SkillListItem">
+            {props.skill}
+            <span className="level">LEVEL {props.level}</span>
+        </li>
+    );
 }
 
 export default SkillListItem

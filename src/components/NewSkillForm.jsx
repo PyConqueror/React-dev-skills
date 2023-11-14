@@ -1,6 +1,7 @@
 function NewSkillForm() {
     return(
-        <form >
+
+        <form className="NewSkillForm">
             <label>Skill</label>
             <input type="text" name="" id="" />
             <label>Level</label>
