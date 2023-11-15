@@ -5,15 +5,20 @@ function NewSkillForm( {addSkill} ) {
         name: "",
         level: 3
     });
-    // function handleChange(event) {
-    //     const newFormData = {[event.target.name]: event.target.value };
-    //     setFormData(...formData, newFormData);
-    // }
+    function handleChangeName(event) {
+        setFormData({ ...formData, name: event.target.value });
+
+    }
+    function handleChangeLevel(event) {
+        setFormData({ ...formData, level: event.target.value });
+
+    }
+
     function addNewSkill(event) {
         event.preventDefault();
         addSkill(formData);
         setFormData({
-            name: "CSS",
+            name: "",
             level: 3
         });
     }
@@ -24,12 +29,14 @@ function NewSkillForm( {addSkill} ) {
             <input 
             type="text" 
             name="name"  
-            onChange={(e) => setFormData({...formData, name: e.target.value})}            value={formData.name}
+            onChange={handleChangeName}
+            value={formData.name}
             /> 
             <label>Level</label>
             <select 
             name="level"
-            onChange={(e) => setFormData({...formData, level: e.target.value})}            value={formData.level}
+            onChange={handleChangeLevel}
+            value={formData.level}
             >
                 <option value={1}>1</option>
                 <option value={2}>2</option>
@@ -39,7 +46,7 @@ function NewSkillForm( {addSkill} ) {
             </select>
             <button type="submit">ADD SKILL</button>
         </form>
-        <h1>{formData.skill} {formData.level}</h1>
+        <h1>{formData.name} {formData.level}</h1>
         </div>
         
     );
