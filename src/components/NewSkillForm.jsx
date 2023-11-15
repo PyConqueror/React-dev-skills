@@ -8,11 +8,10 @@ function NewSkillForm( {addSkill} ) {
     function handleChangeName(event) {
         setFormData({ ...formData, name: event.target.value });
 
-    }
+    };
     function handleChangeLevel(event) {
         setFormData({ ...formData, level: event.target.value });
-
-    }
+    };
 
     function addNewSkill(event) {
         event.preventDefault();
