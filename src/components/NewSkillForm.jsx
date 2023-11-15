@@ -2,16 +2,20 @@ import {useState} from "react";
 
 function NewSkillForm( {addSkill} ) {
     const [formData, setFormData] = useState({
-        skill: " ",
-        level: " "
+        name: "",
+        level: 3
     });
-    function handleChange(event) {
-        const newFormData = {[event.target.name]: event.target.value };
-        setFormData(newFormData);
-    }
+    // function handleChange(event) {
+    //     const newFormData = {[event.target.name]: event.target.value };
+    //     setFormData(...formData, newFormData);
+    // }
     function addNewSkill(event) {
         event.preventDefault();
         addSkill(formData);
+        setFormData({
+            name: "CSS",
+            level: 3
+        });
     }
     return(
         <div>
@@ -19,13 +23,13 @@ function NewSkillForm( {addSkill} ) {
             <label>Skill</label>
             <input 
             type="text" 
-            name="skill"  
-            onChange={handleChange}
+            name="name"  
+            onChange={(e) => setFormData({...formData, name: e.target.value})}            value={formData.name}
             /> 
             <label>Level</label>
             <select 
             name="level"
-            onChange={handleChange}
+            onChange={(e) => setFormData({...formData, level: e.target.value})}            value={formData.level}
             >
                 <option value={1}>1</option>
                 <option value={2}>2</option>

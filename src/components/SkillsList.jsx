@@ -3,8 +3,8 @@ import SkillListItem from "./SkillListItem"
 function SkillList(props) {
     return (
         <ul>
-            {props.skills.map(skill => (
-                <SkillListItem skill={skill.name} level={skill.level}/>
+            {props.skills.map((skill,index) => (
+                <SkillListItem skill={skill} key={index}/>
             ))}
         </ul>
     )
